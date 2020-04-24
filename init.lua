@@ -36,6 +36,13 @@ local ferment = {
 	{"farming:baked_potato", modname .. ":biofuel"}
 }
 
+local function get_pointer_angle(energy)
+    local angle = energy * 18
+    angle = angle - 90
+    angle = angle * -1
+	return angle
+end
+
 -- distiller
 biofueldistiller_formspec = "size[8,9]"
 	.. "list[current_name;src;2,1;1,1;]"
@@ -197,3 +204,4 @@ minetest.register_node( modname .. ":biofuel_distiller", {
 		return true
 	end,
 })
+
