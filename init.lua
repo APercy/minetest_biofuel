@@ -4,6 +4,21 @@
 
 local modname = "biofuel"
 
+if minetest.get_modpath("technic") then
+	technic.register_extractor_recipe({input = {"farming:wheat 33"}, output = "biofuel:biofuel 1"})
+	technic.register_extractor_recipe({input = {"farming:corn 33"}, output = "biofuel:biofuel 1"})
+	technic.register_extractor_recipe({input = {"farming:potato 33"}, output = "biofuel:biofuel 1"})
+	technic.register_extractor_recipe({input = {"default:papyrus 99"}, output = "biofuel:biofuel 1"})
+end
+
+
+if minetest.get_modpath("basic_machines") then
+	basic_machines.grinder_recipes["farming:wheat"] = {50,"biofuel:biofuel",1}
+	basic_machines.grinder_recipes["farming:corn"] = {50,"biofuel:biofuel",1}
+	basic_machines.grinder_recipes["farming:potato"] = {50,"biofuel:biofuel",1}
+	basic_machines.grinder_recipes["default:papyrus"] = {70,"biofuel:biofuel",1}
+end
+
 if minetest.get_modpath("default") then
 	--[[minetest.register_craft({
 		output = modname .. ":biofuel",
