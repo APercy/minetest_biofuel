@@ -52,15 +52,9 @@ local ferment = {
 	{"default:papyrus", modname .. ":biofuel"},
 	{"farming:wheat", modname .. ":biofuel"},
 	{"farming:corn", modname .. ":biofuel"},
-	{"farming:baked_potato", modname .. ":biofuel"}
+	{"farming:baked_potato", modname .. ":biofuel"},
+    {"farming:potato", modname .. ":biofuel"}
 }
-
-local function get_pointer_angle(energy)
-    local angle = energy * 18
-    angle = angle - 90
-    angle = angle * -1
-	return angle
-end
 
 -- distiller
 biofueldistiller_formspec = "size[8,9]"
